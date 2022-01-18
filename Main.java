@@ -38,11 +38,17 @@ class Main {
 
     if (balance < bet) {
       System.out.println("Error: bet bigger than balance");
+    } else{
+
+      break;
+
     }
 
     balance -= bet;
     
     }while(true);
+    
+    System.out.println("");
     System.out.println("-------------------------------------------");
     System.out.println("");
   }// end of balance method
