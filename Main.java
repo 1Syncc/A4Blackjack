@@ -49,7 +49,7 @@ class Main {
     balance -= bet;
     
     }while(true);
-    System.out.println("You have bet $" + bet + "!");
+    System.out.println("You have bet $" + bet + "!"); 
     System.out.println("");
     System.out.println("-------------------------------------------");
     System.out.println("");
