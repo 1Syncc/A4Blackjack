@@ -55,28 +55,22 @@ class Main {
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static void randomNum(){
+  public static void startCards(int num1, int num2, int num3){
 
-    int[] userNum = new int[50];
-    int[] compNum = new int[50];
     int min = 1;
     int max = 10;
+      
+      num1 = (int)(Math.random() * (max - min + 1) + min);
+      num2 = (int)(Math.random() * (max - min + 1) + min);
+      num3 = (int)(Math.random() * (max - min + 1) + min);
 
-    for(int i = 0; i < userNum.length; i++){
-      
-      userNum[i] = (int)(Math.random() * (max - min + 1) + min);
-      compNum[i] = (int)(Math.random() * (max - min + 1) + min);
-      
-    }//end of loop
+     System.out.println("Your cards are: " + num1 + " and " + num2);
   
-    System.out.println(userNum[0]);
 
   }//end of userRNG method
 
-
-
   public static void game(){
-    gameComs();
+    startCards(1, 2, 3);
     
     
   }// end of game method
