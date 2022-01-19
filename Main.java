@@ -55,14 +55,17 @@ class Main {
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static void startCards(int num1, int num2, int num3){
+  public static void startCards(){
 
+    static int num1;
+    static int num2;
+    static int num3;
     int min = 1;
     int max = 10;
       
-      num1 = (int)(Math.random() * (max - min + 1) + min);
-      num2 = (int)(Math.random() * (max - min + 1) + min);
-      num3 = (int)(Math.random() * (max - min + 1) + min);
+      static num1 = (int)(Math.random() * (max - min + 1) + min);
+      static num2 = (int)(Math.random() * (max - min + 1) + min);
+      static num3 = (int)(Math.random() * (max - min + 1) + min);
 
      System.out.println("Your cards are: " + num1 + " and " + num2);
      System.out.println("");
