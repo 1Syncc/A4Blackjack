@@ -73,12 +73,7 @@ class Main {
 
   }//end of userRNG method
 
-  public static void gameComs(){
-    
-   
-    
 
-  }
 
   public static void game(){
     gameComs();
