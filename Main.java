@@ -86,6 +86,12 @@ class Main {
   }// end of compRNG method
 
   public static void gameComs(){
+   userRNG();
+   compRNG();
+
+    System.out.println("Your cards are " + userNum);
+    System.out.println("");
+    System.out.println("The dealer has " + compNum);
 
   }
 
