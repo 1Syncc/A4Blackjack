@@ -65,13 +65,16 @@ class Main {
       num3 = (int)(Math.random() * (max - min + 1) + min);
 
      System.out.println("Your cards are: " + num1 + " and " + num2);
+     System.out.println("");
+     System.out.println("The dealer has a: " + num3);
   
 
   }//end of userRNG method
 
-  public static void game(){
+  public static void hitOrStay(){
     startCards(1, 2, 3);
     
+
     
   }// end of game method
 
