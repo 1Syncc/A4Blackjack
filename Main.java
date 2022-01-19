@@ -55,9 +55,9 @@ class Main {
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static void userRNG(){
+  public static void userRNG(int[] userNum){
 
-    int[] userNum = new int[50];
+    userNum = new int[50];
     int min = 1;
     int max = 10;
 
@@ -71,9 +71,9 @@ class Main {
   }//end of userRNG method
 
 // Random Number Generator Method for Computer
-  public static void compRNG(){
+  public static void compRNG(int[] compNum){
 
-    int[] compNum = new int[50];
+    compNum = new int[50];
     int min = 1;
     int max = 10;
 
@@ -89,9 +89,9 @@ class Main {
    userRNG();
    compRNG();
 
-    System.out.println("Your cards are " + userNum);
+    System.out.println("Your cards are " + userNum[0]);
     System.out.println("");
-    System.out.println("The dealer has " + compNum);
+    System.out.println("The dealer has " + compNum[0]);
 
   }
 
@@ -105,12 +105,13 @@ class Main {
 
   public static void main(String[] args) {
     
+  do{ 
     rules();
     userBet(1, 2);
     System.out.println("The game has started, good luck!");
     System.out.println("");
     game();
-
+  }while(true);
   }// end of main method
 
 }// end of class
