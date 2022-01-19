@@ -55,52 +55,33 @@ class Main {
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static int[] userRNG(){
+  public static void randomNum(){
 
     int[] userNum = new int[50];
+    int[] compNum = new int[50];
     int min = 1;
     int max = 10;
 
     for(int i = 0; i < userNum.length; i++){
       
       userNum[i] = (int)(Math.random() * (max - min + 1) + min);
-      
-    }//end of loop
-  
-  return userNum;
-
-  }//end of userRNG method
-
-// Random Number Generator Method for Computer
-  public static int[] compRNG(){
-
-    int[] compNum = new int[50];
-    int min = 1;
-    int max = 10;
-
-    for(int i = 0; i < compNum.length; i++){
-      
       compNum[i] = (int)(Math.random() * (max - min + 1) + min);
       
     }//end of loop
+  
+    System.out.println(userNum[0]);
 
-    return compNum;
+  }//end of userRNG method
 
-  }// end of compRNG method
-
-  public static void gameComs(String userNum){
-
+  public static void gameComs(){
+    
    
-    System.out.println("Your cards are ");
-    System.out.println("");
-    System.out.println("The dealer has ");
+    
 
   }
 
   public static void game(){
-    userRNG();
-    compRNG();
-
+    gameComs();
     
     
   }// end of game method
