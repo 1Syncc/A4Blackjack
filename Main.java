@@ -36,8 +36,10 @@ class Main {
     bet = sin.nextInt();
     sin.nextLine();
 
-    if (balance < bet) {
+    if (bet > balance) {
+      System.out.println("");
       System.out.println("Error: bet bigger than balance");
+      System.out.println("");
     } else{
 
       break;
@@ -47,17 +49,18 @@ class Main {
     balance -= bet;
     
     }while(true);
-    
+    System.out.println("You have bet $" + bet + "!");
     System.out.println("");
     System.out.println("-------------------------------------------");
     System.out.println("");
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static void userRNG(int min, int max, int[] userNum){
+  public static void userRNG(){
 
-    min = 1;
-    max = 10;
+    int[] userNum = new int[50];
+    int min = 1;
+    int max = 10;
 
     for(int i = 0; i < userNum.length; i++){
       
@@ -69,10 +72,11 @@ class Main {
   }//end of userRNG method
 
 // Random Number Generator Method for Computer
-  public static void compRNG(int min, int max, int[] compNum){
+  public static void compRNG(){
 
-    min = 1;
-    max = 10;
+    int[] compNum = new int[50];
+    int min = 1;
+    int max = 10;
 
     for(int i = 0; i < compNum.length; i++){
       
@@ -84,6 +88,9 @@ class Main {
 
   public static void game(){
 
+    userRNG();
+    compRNG();
+    
   }// end of game method
 
   public static void main(String[] args) {
