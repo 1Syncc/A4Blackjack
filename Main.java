@@ -45,10 +45,9 @@ class Main {
       break;
 
     }
-
-    balance -= bet;
     
     }while(true);
+    balance -= bet;
     System.out.println("You have bet $" + bet + "!"); 
     System.out.println("");
     System.out.println("-------------------------------------------");
@@ -86,10 +85,15 @@ class Main {
 
   }// end of compRNG method
 
-  public static void game(){
+  public static void gameComs(){
 
+  }
+
+  public static void game(){
     userRNG();
     compRNG();
+
+    
     
   }// end of game method
 
@@ -97,7 +101,10 @@ class Main {
     
     rules();
     userBet(1, 2);
+    System.out.println("The game has started, good luck!");
+    System.out.println("");
     game();
+
   }// end of main method
 
 }// end of class
