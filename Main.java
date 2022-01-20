@@ -5,7 +5,8 @@ class Main {
     static int[] startCards = new int[2];
     static int[] userCards = new int[100];
     static int[] compCards = new int[100];
-    static int total;
+    static int userTotal;
+    static int compTotal;
 
   public static void rules(){
 
@@ -69,7 +70,7 @@ public static void cardLoop(){
       startCards[i] = (int)(Math.random() * (max - min + 1) + min);
 
     }
-      total += startCards[0] + startCards[1];
+      userTotal += startCards[0] + startCards[1];
   }
 
 
@@ -115,7 +116,17 @@ public static void cardLoop(){
     if(userHOS.equalsIgnoreCase("Hit")){
 
     for(int i = 0; i < userCards.length; i++){ 
- 
+      
+      userTotal += userCards[i];
+
+      if(userTotal >= 22){
+
+        System.out.println("BUST! GAME OVER");
+        System.out.println("");
+        System.out.println("Thanks for Playing!");
+        System.exit(0);
+      }
+      
       System.out.println("You got a " + userCards[i]);
       System.out.println("");
       System.out.println("Would you like to hit or stay?");
