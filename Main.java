@@ -5,13 +5,14 @@ class Main {
     static int[] startCards = new int[2];
     static int[] userCards = new int[100];
     static int[] compCards = new int[100];
+    static int total;
 
   public static void rules(){
 
     System.out.println("");
     System.out.println("Here Are The Rules of The Game!");
     System.out.println("");
-    System.out.println("-----------------BLACKJACK-----------------");
+    System.out.println("-------------------RULES-------------------");
     System.out.println("         You start with 2 cards.");
     System.out.println("   You can hit to get more cards or stay.");
     System.out.println("          If you get 21 you win! ");
@@ -68,14 +69,14 @@ public static void cardLoop(){
       startCards[i] = (int)(Math.random() * (max - min + 1) + min);
 
     }
-
+      total += startCards[0] + startCards[1];
   }
 
 
 // Random Number Generator Method for User
   public static void userRNG(){
     cardLoop();
-    
+
     int min = 1;
     int max = 10;
       
@@ -116,6 +117,13 @@ public static void cardLoop(){
     for(int i = 0; i < userCards.length; i++){ 
  
       System.out.println("You got a " + userCards[i]);
+      System.out.println("");
+      System.out.println("Would you like to hit or stay?");
+      userHOS = sin.nextLine();
+
+      if(userHOS.equalsIgnoreCase("Stay")){
+        break;
+      }// end of if statement
 
     }// end of for loop
     }//end of if statement
@@ -129,6 +137,7 @@ public static void cardLoop(){
     userBet(1, 2);
     System.out.println("The game has started, good luck!");
     System.out.println("");
+    System.out.println("<><><><><><><><>BLACKJACK<><><><><><><><>");
     userRNG();
     compRNG();
     hitOrStay();
