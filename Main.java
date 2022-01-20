@@ -2,6 +2,7 @@ import java.util.*;
 
 class Main {
   
+    static int[] startCards = new int[2];
     static int[] userCards = new int[100];
     static int[] compCards = new int[100];
 
@@ -57,9 +58,24 @@ class Main {
     System.out.println("");
   }// end of balance method
 
+public static void cardLoop(){
+
+      int min = 1;
+      int max = 10;
+
+      for(int i = 0; i < startCards.length; i++){
+
+      startCards[i] = (int)(Math.random() * (max - min + 1) + min);
+
+    }
+
+  }
+
+
 // Random Number Generator Method for User
   public static void userRNG(){
-
+    cardLoop();
+    
     int min = 1;
     int max = 10;
       
@@ -67,7 +83,7 @@ class Main {
     userCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
 
-     System.out.println("Your cards are: " + userCards[0] + " and " + userCards[1]);
+     System.out.println("Your cards are: " + startCards[0] + " and " + startCards[1]);
      System.out.println("");
 
   }//end of userRNG method
@@ -80,6 +96,7 @@ class Main {
     for(int i = 0; i < userCards.length; i++){ 
     compCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
+    
      System.out.println("The dealer has a: " + compCards[0]);
      System.out.println("");
   
@@ -87,14 +104,21 @@ class Main {
   }//end of userRNG method
 
   public static void hitOrStay(){
+    Scanner sin = new Scanner(System.in);
+
+    String userHOS;
     
+    System.out.println("Would you like to hit or stay?");
+    userHOS = sin.nextLine();
 
-    for(int i = 0; i < userCards.length; i++){
+    if(userHOS.equalsIgnoreCase("Hit")){
 
-      System.out.println()
+    for(int i = 0; i < userCards.length; i++){ 
+ 
+      System.out.println("You got a " + userCards[i]);
 
-    }
-
+    }// end of for loop
+    }//end of if statement
     
   }// end of game method
 
