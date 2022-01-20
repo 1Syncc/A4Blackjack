@@ -2,7 +2,8 @@ import java.util.*;
 
 class Main {
   
-    static int[] userCards = new int[50];
+    static int[] userCards = new int[100];
+    static int[] compCards = new int[100];
 
   public static void rules(){
 
@@ -68,14 +69,31 @@ class Main {
 
      System.out.println("Your cards are: " + userCards[0] + " and " + userCards[1]);
      System.out.println("");
-     System.out.println("The dealer has a: ");
+
+  }//end of userRNG method
+
+  public static void compRNG(){
+
+    int min = 1;
+    int max = 10;
+      
+    for(int i = 0; i < userCards.length; i++){ 
+    compCards[i] = (int)(Math.random() * (max - min + 1) + min);
+    }
+     System.out.println("The dealer has a: " + compCards[0]);
+     System.out.println("");
   
 
   }//end of userRNG method
 
   public static void hitOrStay(){
-    startCards();
     
+
+    for(int i = 0; i < userCards.length; i++){
+
+      System.out.println()
+
+    }
 
     
   }// end of game method
@@ -87,7 +105,9 @@ class Main {
     userBet(1, 2);
     System.out.println("The game has started, good luck!");
     System.out.println("");
-    startCards();
+    userRNG();
+    compRNG();
+    hitOrStay();
     break;
   }while(true);
   }// end of main method
