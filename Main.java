@@ -2,6 +2,8 @@ import java.util.*;
 
 class Main {
   
+    static int[] userCards = new int[50];
+
   public static void rules(){
 
     System.out.println("");
@@ -55,27 +57,24 @@ class Main {
   }// end of balance method
 
 // Random Number Generator Method for User
-  public static void startCards(){
+  public static void userRNG(){
 
-    static int num1;
-    static int num2;
-    static int num3;
     int min = 1;
     int max = 10;
       
-      static num1 = (int)(Math.random() * (max - min + 1) + min);
-      static num2 = (int)(Math.random() * (max - min + 1) + min);
-      static num3 = (int)(Math.random() * (max - min + 1) + min);
+    for(int i = 0; i < userCards.length; i++){ 
+    userCards[i] = (int)(Math.random() * (max - min + 1) + min);
+    }
 
-     System.out.println("Your cards are: " + num1 + " and " + num2);
+     System.out.println("Your cards are: " + userCards[0] + " and " + userCards[1]);
      System.out.println("");
-     System.out.println("The dealer has a: " + num3);
+     System.out.println("The dealer has a: ");
   
 
   }//end of userRNG method
 
   public static void hitOrStay(){
-    startCards(1, 2, 3);
+    startCards();
     
 
     
@@ -88,7 +87,7 @@ class Main {
     userBet(1, 2);
     System.out.println("The game has started, good luck!");
     System.out.println("");
-    game();
+    startCards();
     break;
   }while(true);
   }// end of main method
