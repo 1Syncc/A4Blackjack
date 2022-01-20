@@ -3,7 +3,7 @@ import java.util.*;
 class Main {
   
     static int[] userStartCards = new int[3];
-    static int[] compStartCards = new int[2];
+    static int[] compStartCards = new int[3];
     static int[] userCards = new int[100];
     static int[] compCards = new int[100];
     static int userTotal = 0;
@@ -112,7 +112,6 @@ public static void cardLoop(){
 
     String userHOS;
     
-    System.out.println(userTotal);
     System.out.println("Would you like to hit or stay?");
     userHOS = sin.nextLine();
 
