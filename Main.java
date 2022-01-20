@@ -164,19 +164,6 @@ public static void cardLoop(){
         break;
       }
 
-      if(compTotal > 21){
-
-        System.out.print("DEALER BUSTED! YOU WIN!");
-          
-      } else if(compTotal == 21){
-
-        System.out.println("DEALER GOT BLACKJACK! YOU LOSE");
-        break;
-      }else if(compTotal > {
-
-  
-      }
-
       }
     
   }// end of compDraw Method
@@ -184,7 +171,23 @@ public static void cardLoop(){
   public static void winOrLose(){
     compDraw();
 
+    if(compTotal > 21){
 
+        System.out.print("DEALER BUSTED! YOU WIN!");
+        System.out.println("");
+          
+      } else if(compTotal == 21){
+
+        System.out.println("DEALER GOT BLACKJACK! YOU LOSE");
+        System.out.println("");
+      
+      }else if(compTotal > userTotal){
+
+        System.out.print("YOU WIN!");
+        System.out.println("");
+      }else{
+        
+      }
   }
 
   public static void main(String[] args) {
@@ -194,12 +197,15 @@ public static void cardLoop(){
     userBet(1, 2);
     System.out.println("The game has started, good luck!");
     System.out.println("");
-    System.out.println("<><><><><><><><>BLACKJACK<><><><><><><><>");
+    System.out.println("><><><><><><><><>BLACKJACK<><><><><><><><>");
     userRNG();
     compMessage();
     hitOrStay();
     compDraw();
     winOrLose();
+    System.out.println("><><><><><><><><><><><><><><><><><><><><><>");
+    System.out.println("");
+    System.out.println("Do you want to play again?");
     break;
   }while(true);
   }// end of main method
