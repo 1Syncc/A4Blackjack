@@ -2,11 +2,13 @@ import java.util.*;
 
 class Main {
   
-    static int[] startCards = new int[2];
+    static int[] userStartCards = new int[3];
+    static int[] compStartCards = new int[2];
     static int[] userCards = new int[100];
     static int[] compCards = new int[100];
-    static int userTotal;
-    static int compTotal;
+    static int userTotal = 0;
+    static int compTotal = 0;
+    
 
   public static void rules(){
 
@@ -65,12 +67,13 @@ public static void cardLoop(){
       int min = 1;
       int max = 10;
 
-      for(int i = 0; i < startCards.length; i++){
+      for(int i = 0; i < userStartCards.length; i++){
 
-      startCards[i] = (int)(Math.random() * (max - min + 1) + min);
+      userStartCards[i] = (int)(Math.random() * (max - min + 1) + min);
+      compStartCards[i] = (int)(Math.random() * (max - min + 1) + min);
 
     }
-      userTotal += startCards[0] + startCards[1];
+      userTotal += userStartCards[0] + userStartCards[1];
   }
 
 
@@ -85,21 +88,20 @@ public static void cardLoop(){
     userCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
 
-     System.out.println("Your cards are: " + startCards[0] + " and " + startCards[1]);
+     System.out.println("Your cards are: " + userStartCards[0] + " and " + userStartCards[1]);
      System.out.println("");
 
   }//end of userRNG method
 
   public static void compRNG(){
-
     int min = 1;
     int max = 10;
       
     for(int i = 0; i < userCards.length; i++){ 
     compCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
-     compTotal += compCards[0];
-     System.out.println("The dealer has a: " + compCards[0]);
+     compTotal += compStartCards[0];
+     System.out.println("The dealer has a: " + compStartCards[0]);
      System.out.println("");
   
 
@@ -110,6 +112,7 @@ public static void cardLoop(){
 
     String userHOS;
     
+    System.out.println(userTotal);
     System.out.println("Would you like to hit or stay?");
     userHOS = sin.nextLine();
 
@@ -145,7 +148,16 @@ public static void cardLoop(){
   public static void compDraw(){
     compRNG();
 
-    for(int i = 0; )
+    for(int i = 0; i < compCards.length; i++){
+
+      System.out.println("The Dealer has drawn a " + compCards[i]);
+      compTotal += compCards[i];
+
+      if(compTotal <= 17){
+        break;
+      }
+
+    }
 
   }// end of compDraw Method
 
