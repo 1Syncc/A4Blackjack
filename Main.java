@@ -98,7 +98,7 @@ public static void cardLoop(){
     for(int i = 0; i < userCards.length; i++){ 
     compCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
-    
+     compTotal += compCards[0];
      System.out.println("The dealer has a: " + compCards[0]);
      System.out.println("");
   
@@ -121,6 +121,7 @@ public static void cardLoop(){
 
       if(userTotal >= 22){
 
+        System.out.println("You got a " + userCards[i]);
         System.out.println("BUST! GAME OVER");
         System.out.println("");
         System.out.println("Thanks for Playing!");
@@ -141,6 +142,10 @@ public static void cardLoop(){
     
   }// end of game method
 
+  public static void compDraw(){
+    compRNG();
+  }
+
   public static void main(String[] args) {
     
   do{ 
@@ -152,6 +157,7 @@ public static void cardLoop(){
     userRNG();
     compRNG();
     hitOrStay();
+    compDraw();
     break;
   }while(true);
   }// end of main method
