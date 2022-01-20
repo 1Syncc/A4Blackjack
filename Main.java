@@ -144,6 +144,15 @@ public static void cardLoop(){
 
   public static void compDraw(){
     compRNG();
+
+    for(int i = 0; )
+
+  }// end of compDraw Method
+
+  public static void winOrLose(){
+
+
+
   }
 
   public static void main(String[] args) {
@@ -158,6 +167,7 @@ public static void cardLoop(){
     compRNG();
     hitOrStay();
     compDraw();
+    winOrLose();
     break;
   }while(true);
   }// end of main method
