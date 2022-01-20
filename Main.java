@@ -101,11 +101,17 @@ public static void cardLoop(){
     compCards[i] = (int)(Math.random() * (max - min + 1) + min);
     }
      compTotal += compStartCards[0];
-     System.out.println("The dealer has a: " + compStartCards[0]);
-     System.out.println("");
+     
   
 
   }//end of userRNG method
+
+  public static void compMessage(){
+    compRNG();
+    
+    System.out.println("The dealer has a: " + compStartCards[0]);
+    System.out.println("");
+  }
 
   public static void hitOrStay(){
     Scanner sin = new Scanner(System.in);
@@ -134,6 +140,7 @@ public static void cardLoop(){
       System.out.println("");
       System.out.println("Would you like to hit or stay?");
       userHOS = sin.nextLine();
+      System.out.println("");
 
       if(userHOS.equalsIgnoreCase("Stay")){
         break;
@@ -145,23 +152,37 @@ public static void cardLoop(){
   }// end of game method
 
   public static void compDraw(){
-    compRNG();
+     compRNG();
 
-    for(int i = 0; i < compCards.length; i++){
-
+      for(int i = 0; i < compCards.length; i++){ 
+      System.out.println("");
       System.out.println("The Dealer has drawn a " + compCards[i]);
+      System.out.println("");
       compTotal += compCards[i];
 
-      if(compTotal <= 17){
+      if(compTotal > 16){
         break;
       }
 
-    }
+      if(compTotal > 21){
 
+        System.out.print("DEALER BUSTED! YOU WIN!");
+          
+      } else if(compTotal == 21){
+
+        System.out.println("DEALER GOT BLACKJACK! YOU LOSE");
+        break;
+      }else if(compTotal > {
+
+  
+      }
+
+      }
+    
   }// end of compDraw Method
 
   public static void winOrLose(){
-
+    compDraw();
 
 
   }
@@ -175,7 +196,7 @@ public static void cardLoop(){
     System.out.println("");
     System.out.println("<><><><><><><><>BLACKJACK<><><><><><><><>");
     userRNG();
-    compRNG();
+    compMessage();
     hitOrStay();
     compDraw();
     winOrLose();
